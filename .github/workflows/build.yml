@@ -1,0 +1,12 @@
+name: Docker Build
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: build docker image
+              run: docker build -t todo-api . 
